@@ -1,0 +1,39 @@
+<div class="aligner">
+    <mat-card class="aligner-center-item">
+
+        <mat-card-content>
+
+            <div class="wrapper">
+                <form id="register-form" class="login" [formGroup]="registerForm" (ngSubmit)="register()" novalidate>
+                    <mat-card-title>
+                       Register
+                    </mat-card-title>
+                    <input type="email" placeholder="Email" formControlName="email" autofocus/>
+                    <i class="fas fa-use"></i>
+                    <input type="password" placeholder="Password" formControlName="password" />
+                    <i class="fa fa-key"></i>
+                    <p *ngIf="this.registerForm.get('password').errors?.required && this.registerForm.get('email').touched"
+                       class="form-control-required">Campo obligatorio</p>
+                    <p *ngIf="this.registerForm.get('password').errors?.minlength" class="form-control-required">
+                        Contraseña no segura </p>
+                    <input type="password" placeholder="Confirm Password" formControlName="confirmPassword" />
+                    <i class="fa fa-key"></i>
+                    <p *ngIf="this.registerForm.get('confirmPassword').errors?.required && this.registerForm.get('cofirmPassword').touched"
+                       class="form-control-required">Campo obligatorio</p>
+                    <p *ngIf="this.registerForm.get('confirmPassword').errors?.minlength" class="form-control-required">
+                        Contraseña no segura</p>
+
+                    <button  mat-raised-button type="submit" form="register-form">
+                        <i class="spinner"></i>
+                        <span class="state">Register</span>
+                    </button>
+
+                </form>
+
+
+            </div>
+
+        </mat-card-content>
+
+    </mat-card>
+</div>
