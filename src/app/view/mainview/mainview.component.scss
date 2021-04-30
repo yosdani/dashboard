@@ -1,0 +1,489 @@
+
+//Colors
+$color-black: #000;
+$color-white: #fff;
+$color-primary: #368CDC;
+$color-secondary: #70AD47;
+
+//Valiables
+$space-xl: 2rem;
+$space-large: 1.5rem;
+$space-medium: 1rem;
+$space-small: .5rem;
+$space-tiny: .2rem;
+
+//MEDIA QUERY
+@mixin respond ($breakpoint) {
+  @if $breakpoint==phone {
+    @media (max-width: 50em) {
+      @content
+    }
+
+    ; //800px
+  }
+
+  @if $breakpoint==tab-port {
+    @media (max-width: 65.625em) {
+      @content
+    }
+
+    ; //1050px
+  }
+
+  @if $breakpoint==tab-land {
+    @media (max-width: 78.125em) {
+      @content
+    }
+
+    ; //1250px
+  }
+
+  @if $breakpoint==desktop {
+    @media (max-width : 87.5em) {
+      @content
+    }
+
+    ; //1400px
+  }
+}
+
+//Mixin
+@mixin graph1_planreal {
+  border: 1px solid $color-black;
+  padding: .5rem 0 .5rem 0;
+  background-color: $color-primary;
+  width: 48%;
+  display: inline-block;
+}
+
+@mixin graph1_planreal_box {
+  color: $color-white;
+  font-weight: bold;
+  margin-bottom: $space-small;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+
+  &:not(:last-child) {
+    margin-bottom: $space-small;
+  }
+}
+
+.col-1-of-1 {
+  width: 100%;
+}
+
+.col-1-of-2 {
+  width: calc((100% - #{$space-medium}) / 2);
+
+  @include respond(tab-land) {
+    display: block;
+    width: 100%;
+    margin-right: 0 !important;
+
+    &:not(:last-child) {
+      margin-bottom: $space-small;
+    }
+  }
+}
+
+[class^='col-'] {
+  float: left;
+
+  &:not(:last-child) {
+    margin-right: $space-small;
+  }
+}
+
+.down-25 {
+  background-color: #17bb29;
+}
+
+.between-25-50 {
+  background-color: #6dbb38
+}
+
+.between-50-75 {
+  background-color: #aabb3e;
+}
+
+.top-75 {
+  background-color: #bba016;
+}
+
+.entidades {
+  display: inline-block;
+}
+
+.space_top {
+  margin-top: 2rem;
+}
+
+.container--btn {
+  display: inline-block;
+  margin-left: 2rem;
+}
+
+.header1 {
+  text-align: center;
+  display: inline;
+
+  &__title {
+    border: 1px solid $color-black;
+    padding: $space-small $space-medium;
+    font-size: 1.2rem;
+    font-weight: 500;
+    float: left;
+
+    button {
+      display: inline;
+    }
+
+    @include respond(phone) {
+      font-size: .9rem;
+      padding: $space-tiny $space-small;
+    }
+  }
+}
+
+.header2 {
+  display: block;
+  width: fit-content;
+
+  &__title {
+    border: 1px solid $color-black;
+    padding: $space-small $space-medium;
+    font-size: 1.2rem;
+    font-weight: 500;
+
+    @include respond(phone) {
+      font-size: .9rem;
+      padding: $space-tiny $space-small;
+    }
+  }
+}
+
+.graph {
+  margin: $space-small 0 $space-small 0;
+  padding: $space-small;
+  border: 1px solid $color-black;
+
+  &__1,
+  &__2,
+  &__3,
+  &__4,
+  &__5,
+  &__6,
+  &__11,
+  &__12,
+  &__13,
+  &__14 {
+    border: 1px solid $color-black;
+  }
+
+  &__7,
+  &__9 {
+    float: left;
+    width: 49%;
+
+    @include respond(phone) {
+      float: none;
+      width: 100%;
+      display: block;
+    }
+  }
+
+  &__8,
+  &__10 {
+    float: right;
+    width: 49%;
+
+    @include respond(phone) {
+      float: none;
+      width: 100%;
+      display: block;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: $space-medium;
+    margin-top: $space-small;
+
+    @include respond(phone) {
+      font-size: 95%;
+      margin-bottom: $space-small;
+    }
+
+    &--pies {
+      background-color: $color-primary;
+      color: $color-white;
+      text-transform: uppercase;
+      text-align: center;
+      font-weight: bold;
+      padding: $space-small 0 $space-small 0;
+    }
+
+    &--total {
+      display: inline-block;
+      width: 100%;
+      margin-top: $space-tiny;
+      color: $color-white;
+
+      .anno {
+        display: inline-block;
+        width: 50%;
+        background-color: $color-primary;
+        padding: $space-tiny 0 $space-tiny 0;
+        text-align: center;
+      }
+
+      .total {
+        display: inline-block;
+        width: 50%;
+        background-color: $color-secondary;
+        padding: $space-tiny 0 $space-tiny 0;
+        text-align: center;
+      }
+    }
+  }
+
+  &__container-planreal {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+
+    @include respond(tab-land) {
+      display: inherit;
+      text-align: inherit;
+    }
+  }
+
+  &__anual {
+    @include graph1_planreal();
+    margin: 0 .9rem $space-small 0;
+
+    @include respond(desktop) {
+      margin: 0 $space-small $space-tiny 0;
+    }
+
+    @include respond(tab-land) {
+      margin: 0 0 0 .4rem;
+      text-align: center;
+      float: left;
+      display: inherit;
+    }
+
+    @include respond(phone) {
+      float: none;
+      display: block;
+      width: 96.7%;
+      margin-bottom: $space-tiny;
+    }
+    
+
+    &--plan {
+      @include graph1_planreal_box();
+    }
+
+    &--real {
+      @include graph1_planreal_box();
+    }
+  }
+
+  &__acum {
+    @include graph1_planreal();
+    margin: 0 0 $space-small 0;
+
+    @include respond(tab-land) {
+      display: inherit;
+      margin: 0 $space-small $space-small 0;
+      float: right;
+      text-align: center;
+    }
+
+    @include respond(phone) {
+      float: none;
+      display: block;
+      width: 96.7%;
+      margin-bottom: $space-tiny;
+      margin-left: .4rem;
+    }
+
+    &--plan {
+      @include graph1_planreal_box();
+    }
+
+    &--real {
+      @include graph1_planreal_box();
+    }
+  }
+
+  &__porcentage {
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  &__container-realtexp {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    padding: 0 .4rem 0 .4rem;
+  }
+
+  &__realexport {
+    width: 49%;
+    border: 1px solid $color-black;
+    display: inline-block;
+    float: left;
+
+    @include respond(phone) {
+      display: block;
+      float: none;
+      width: 99.5%;
+      margin-bottom: $space-tiny;
+    }
+  }
+
+  &__pie-realtexp {
+    width: 100%;
+    margin-bottom: .8rem;
+
+    &--title {
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-bottom: $space-medium;
+
+      @include respond(phone) {
+        font-size: 95%;
+      }
+    }
+  }
+
+  &__country {
+    width: 49%;
+    border: 1px solid $color-black;
+    float: right;
+    padding-left: $space-small;
+    padding-top: $space-small;
+
+    @include respond(tab-land) {
+      padding-top: 0;
+    }
+
+    @include respond(phone) {
+      display: block;
+      float: none;
+      width: 99.5%;
+      margin-bottom: $space-tiny;
+    }
+
+    &--container {
+      display: flex;
+      align-items: flex-end;
+      width: 90%;
+      height: 2.04vw;
+      text-align: center;
+
+      @include respond(desktop) {
+        width: 100%;
+        height: 1.95vw;
+
+        &:first-child {
+          margin-top: $space-small;
+        }
+
+        &:last-child {
+          margin-bottom: $space-tiny;
+        }
+      }
+
+      @include respond(tab-land) {
+        height: 3.93vw;
+        margin-top: 0 !important;
+        margin-bottom: 0;
+      }
+
+      @include respond(tab-port) {
+        height: 3.7vw;
+      }
+    }
+
+    &--iso {
+      width: 20%;
+      text-align: left;
+      margin-bottom: .55rem;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    &--porcentage {
+      max-width: 75%;
+      margin-top: 1rem;
+      margin-bottom: .8rem;
+    }
+  }
+
+  &__title-details {
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 2px;
+    margin-left: 20%;
+
+    @include respond(phone) {
+      font-size: .9rem;
+      margin-left: 5%;
+    }
+
+    &--btn {
+      float: right;
+      margin-right: 4%;     
+  
+      @include respond(desktop) {
+        margin-right: 0;
+      }
+
+      @include respond(tab-land) {
+        margin-right: 4%;
+      }
+
+      @include respond(tab-port) {
+        font-size: .9rem;
+        margin-bottom: $space-small;
+        margin-right: 0;
+
+        button {
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      @include respond(phone) {
+        margin-right: 45%;
+        font-size: .9rem;
+        margin-bottom: $space-small;
+      }
+    }
+  }
+
+  &__prodexport {
+    margin-top: $space-medium;
+  }
+
+  &__container {
+    margin-top: $space-tiny;
+    border: 1px solid $color-black;
+
+    &--back-line {
+      background: -moz-repeating-linear-gradient(45deg, #B7B7B7, #FFFFFF 3px, #eee .35rem);
+      background: -webkit-repeating-linear-gradient(45deg, #B7B7B7, #FFFFFF 3px, #eee .35rem);
+      background: repeating-linear-gradient(45deg, #B7B7B7, #FFFFFF 3px, #eee .35rem);
+    }
+  }
+}
