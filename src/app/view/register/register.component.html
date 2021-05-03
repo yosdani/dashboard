@@ -10,10 +10,14 @@
                     </mat-card-title>
                     <input type="email" placeholder="Email" formControlName="email" autofocus/>
                     <i class="fas fa-use"></i>
+                    <div *ngIf="this.registerForm.get('email').errors?.required && this.registerForm.get('email').touched"
+                         class="form-control-required">Required field</div>
+                    <div *ngIf="this.registerForm.get('email').hasError('pattern')" class="form-control-required">Check it's your email
+                    </div>
                     <input type="password" placeholder="Password" formControlName="password" />
                     <i class="fa fa-key"></i>
                     <p *ngIf="this.registerForm.get('password').errors?.required && this.registerForm.get('email').touched"
-                       class="form-control-required">Campo obligatorio</p>
+                       class="form-control-required">Required field</p>
                     <p *ngIf="this.registerForm.get('password').errors?.minlength" class="form-control-required">
                         Contraseña no segura </p>
                     <input type="password" placeholder="Confirm Password" formControlName="confirmPassword" />

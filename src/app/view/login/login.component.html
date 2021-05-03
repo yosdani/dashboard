@@ -10,12 +10,12 @@
                     </mat-card-title>
                     <div class="form-group">
 
-                    <input type="text" placeholder="Username" formControlName="email" autofocus/>
+                    <input type="text" placeholder="Email" formControlName="email" autofocus/>
                     <i class="fas fa-use"></i>
                     <div *ngIf="this.loginForm.get('email').errors?.required && this.loginForm.get('email').touched"
-                         class="form-control-required">Campo obligatorio</div>
-                    <div *ngIf="this.loginForm.get('email').hasError('pattern')" class="form-control-required">Verifique
-                        su correo</div>
+                         class="form-control-required">Required field</div>
+                    <div *ngIf="this.loginForm.get('email').hasError('pattern')" class="form-control-required">Check it's your email
+                        </div>
                     </div>
                     <div class="form-group">
                     <input type="password" placeholder="Password" formControlName="password" required="required" />
@@ -34,8 +34,8 @@
                                        aria-hidden="true" role="presentation" id="recaptcha-anchor-label">¿Soy humano?</label>
                             </div>
                             <div class="image-catcha"></div>
-                            <p *ngIf="chekedcatcha === true" class="form-control-required-capta">Por favor marque la
-                                opci&oacute;n captcha</p>
+                            <p *ngIf="chekedcatcha === true" class="form-control-required-capta">Please mark the captcha option
+                                </p>
                             <h4 *ngIf="radoncatcha">{{radoncatcha}}</h4>
                         </div>
                         <input type="number" *ngIf="radoncatcha" name="catcha" formControlName="catchanumber"

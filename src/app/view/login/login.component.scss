@@ -9,7 +9,7 @@ body {
 
 @keyframes spinner {
   0% { transform: rotateZ(0deg); }
-  100% { transform: rotateZ(359deg); }
+  100% { transform: rotateZ(459deg); }
 }
 
 * {
@@ -26,6 +26,36 @@ body {
   padding: 20px;
  // background: rgba(darken($primary,40%), 0.85);
 }
+.image-catcha {
+  background-image: url('../../../assets/images/catcha.png');
+  background-repeat: no-repeat;
+  background-size: 20px;
+  height: 30px;
+  width: 15%;
+  float: right;
+}
+.recaptcha-checkbox {
+  border: none;
+  font-size: 1px;
+  height: 14px;
+  margin: 2px;
+  width: 28px;
+  overflow: visible;
+  outline: 0;
+  vertical-align: text-bottom;
+}
+.recaptcha-checkbox-border {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  background-color: #fff;
+  border: 2px solid #c1c1c1;
+  font-size: 1px;
+  height: 12px;
+  position: absolute;
+  width: 12px;
+}
+
 form-control-required {
   color: red;
   text-align: left;
@@ -33,12 +63,39 @@ form-control-required {
   position: absolute;
 }
 
+.rc-anchor-light.rc-anchor-normal {
+  border: 1px solid #d3d3d3;
+  padding: 0 3px 3px 3px;
+  margin-bottom: 7px;
+  background-color: #f9f9f9;
+}
+.rc-anchor-normal .rc-anchor-content {
+  height: 49px;
+  width: 100%;
+  margin-top: 12px;
+  margin-left: 6px;
+  display: inline-block;
+}
+.rc-inline-block {
+  display: inline-block;
+  height: 100%;
+}
+.rc-anchor-checkbox {
+  margin: 0 12px 2px 12px;
+}
+.rc-inline-block.label {
+  float: left;
+}
+.rc-anchor-center-item.rc-anchor-checkbox-label {
+  margin-left: 2px;
+}
+
 .login {
 
   border-radius: 2px 2px 5px 5px;
   padding: 10px 20px 20px 20px;
   width: 90%;
-  max-width: 320px;
+  max-width: 620px;
   background: #ffffff;
   position: relative;
   padding-bottom: 80px;
