@@ -1,0 +1,14 @@
+.image-hover-zoomin div {
+  background: #02399d;
+}
+
+.image-hover-zoomin:img {
+  opacity: 1;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.image-hover-zoomin:hover img {
+  opacity: 0.5;
+  cursor: pointer;
+}

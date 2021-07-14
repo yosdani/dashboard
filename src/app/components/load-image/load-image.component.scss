@@ -1,0 +1,110 @@
+.avatar-size {
+  width: 7em !important;
+  height: 7em !important;
+}
+
+.edh-avatar {
+	position: relative;
+	display: inline-block;
+
+	.edh-avatar__holder {
+		width: 120px;
+		height: 120px;
+		border-radius: 3px;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	.edh-avatar__upload {
+		cursor: pointer;
+		display:flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		right: -10px;
+		top: -10px;
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		background-color: #ffffff;
+		box-shadow: 0px 0px 13px 0px rgba(#000000, 0.1);
+
+		input {
+			width: 0 !important;
+			height: 0 !important;
+			overflow: hidden;
+			opacity: 0;
+		}
+
+		i {
+			color: edh-brand-color();
+			font-size: 0.9rem;
+		}
+
+		&:hover{
+			background-color: edh-brand-color();
+
+			i {
+				color: edh-brand-color(inverse);
+			}
+		}
+	}
+
+	.edh-avatar__cancel {
+		cursor: pointer;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		top: auto;
+		right: -10px;
+		bottom: -5px;
+		width: 22px;
+		height: 22px;
+		border-radius: 50%;
+		background-color: #ffffff;
+		box-shadow: 0px 0px 13px 0px rgba(#000000, 0.1);
+		display: none;
+
+		i {
+			color: edh-base-color(label, 2);
+			font-size: 0.9rem;
+		}
+		
+		&:hover{
+			i {
+				color: edh-brand-color();
+			}
+		}
+	}
+
+	&.edh-avatar--changed {
+		.edh-avatar__cancel {
+			display: flex;
+		}
+	}
+
+	// Circle style
+	&.edh-avatar--circle {
+		.edh-avatar__holder {
+			border-radius: 50%;
+		}
+
+		.edh-avatar__upload {
+			right: 0px;
+			top: 5px;
+		}
+
+		.edh-avatar__cancel {
+			right: 3px;
+			bottom: 10px;
+		}
+	}
+
+	// Bordered style
+	&.edh-avatar--outline {
+		.edh-avatar__holder {
+			border: 3px solid #ffffff;
+			box-shadow: 0px 0px 13px 0px rgba(#000000, 0.1);
+		}
+	}
+}

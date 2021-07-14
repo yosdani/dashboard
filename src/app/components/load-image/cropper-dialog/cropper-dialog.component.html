@@ -1,0 +1,33 @@
+<h2 mat-dialog-title>Recortar imagen</h2>
+
+<mat-dialog-content>
+
+  <div class="text-center m-2">
+
+    <mat-button-toggle-group appearance="legacy" name="fontStyle" aria-label="Font Style">
+      <mat-button-toggle value="Zoom In" (click)="zoomIn()" aria-label="Zoom In">
+        <mat-icon>zoom_in</mat-icon>
+      </mat-button-toggle>
+      <mat-button-toggle value="Zoom Out" (click)="zoomOut()" aria-label="Zoom Out">
+        <mat-icon>zoom_out</mat-icon>
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+
+  </div>
+  <image-cropper [imageChangedEvent]="imageChangedEvent"
+                 format="png"
+                 alignImage="center"
+                 [transform]="transform"
+                 [maintainAspectRatio]="true"
+                 [aspectRatio]="1 / 1"
+                 [resizeToWidth]="600"
+                 (imageCropped)="imageCropped($event)">
+  </image-cropper>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <div class="edh-card-actions">
+    <button (click)="save()" color="primary" mat-raised-button>Recortar</button>
+  </div>
+</mat-dialog-actions>
