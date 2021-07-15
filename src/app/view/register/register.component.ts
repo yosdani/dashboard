@@ -39,22 +39,9 @@ export class RegisterComponent {
 
         });
     }
-    // showInfo(msg: string, title: string) {
-    //     if(this.fixed == 0 || this.fixed % 2 == 0)
-    //         this.toastr.warning(msg, title, {
-    //             enableHtml: true,
-    //             timeOut: 5000,
-    //             closeButton: true,
-    //             progressBar: true,
-    //             positionClass: "toast-bottom-right",
-    //         });
-    //     this.fixed ++;
-    // }
+
 
     register() {
-        // const user = { email: this.email, password: this.password };
-        // this.userService.register(user).subscribe(data => {
-        //    // this.userService.setToken(data.token);
-        // });
+
     }
 }
