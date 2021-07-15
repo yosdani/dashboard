@@ -12,6 +12,7 @@ import {environment} from '../environments/environment';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
+import {NgxIntlTelInputModule} from 'ngx-intl-tel-input';
 
 import { LoginComponent } from "./view/login/login.component";
 
@@ -24,6 +25,7 @@ import { LoginComponent } from "./view/login/login.component";
         ReactiveFormsModule,
         FontAwesomeModule,
         HttpClientModule,
+        NgxIntlTelInputModule,
         ToastrModule.forRoot()
     ],
     providers: [],
