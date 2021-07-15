@@ -9,6 +9,7 @@ import { RegisterRoutingModule } from './register-routing.module';
 import { RegisterComponent } from './register.component';
 import {LoginService} from '../../services';
 import { ToastrModule } from 'ngx-toastr';
+import {Ng2TelInputModule} from 'ng2-tel-input';
 
 @NgModule({
     imports: [
@@ -19,6 +20,7 @@ import { ToastrModule } from 'ngx-toastr';
         MatFormFieldModule,
         MatDialogModule,
         TranslateModule,
+        Ng2TelInputModule,
         ToastrModule.forRoot(),
         RegisterRoutingModule],
     declarations: [RegisterComponent],

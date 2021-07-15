@@ -14,6 +14,21 @@
                          class="form-control-required">Required field</div>
                     <div *ngIf="this.registerForm.get('email').hasError('pattern')" class="form-control-required">Check it's your email
                     </div>
+                    <ngx-intl-tel-input class="form-control intl-tel-input"
+                                        [cssClass]="'custom'"
+                                        [preferredCountries]="[CountryISO.Spain, CountryISO.Cuba]"
+                                        [enableAutoCountrySelect]="false"
+                                        [enablePlaceholder]="true"
+                                        [searchCountryFlag]="true"
+                                        [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
+                                        [selectFirstCountry]="false"
+                                        [selectedCountryISO]="CountryISO.Spain"
+                                        [separateDialCode]="separateDialCode"
+                                        [phoneValidation]="true"
+                                        name="phone"
+                                        formControlName="phone"
+                    ></ngx-intl-tel-input>
+
                     <input type="password" placeholder="Password" formControlName="password" />
                     <i class="fa fa-key"></i>
                     <p *ngIf="this.registerForm.get('password').errors?.required && this.registerForm.get('email').touched"
@@ -26,6 +41,10 @@
                        class="form-control-required">Campo obligatorio</p>
                     <p *ngIf="this.registerForm.get('confirmPassword').errors?.minlength" class="form-control-required">
                         Contraseña no segura</p>
+                    <input type="file" placeholder="avatar" formControlName="avatar" />
+                    <i class="fa fa-key"></i>
+                    <p *ngIf="this.registerForm.get('avatar').errors?.required && this.registerForm.get('avatar').touched"
+                       class="form-control-required">Campo obligatorio</p>
 
                     <button  mat-raised-button type="submit" form="register-form">
                         <i class="spinner"></i>
