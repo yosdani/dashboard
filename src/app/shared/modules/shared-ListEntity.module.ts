@@ -4,14 +4,16 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {ListEntityComponent} from "../../components/widgets/list-entity/list-entity.component";
+import {MatSelectModule} from "@angular/material/select";
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [ListEntityComponent],
   imports: [
-    CommonModule,MatIconModule,FormsModule,MatDialogModule,NgbModule
+    CommonModule, FormsModule, MatDialogModule, MatSelectModule
   ],
-  exports: []
+  exports: [ListEntityComponent]
 })
-export class SharedModule { }
+export class SharedListEntityModule { }
