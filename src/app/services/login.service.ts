@@ -3,6 +3,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders,HttpClientModule} from '@angular/common/http';
 import { environment} from '../../environments/environment';
 import {Subject,Observable} from 'rxjs';
+import {Auth, Authentication, SignUp} from '@models';
 
 
 @Injectable({
@@ -21,6 +22,20 @@ export class LoginService {
      const header = new HttpHeaders({'Content-Type': 'application/json'});
      const body = JSON.stringify({email: email, password: password});
      return this.http.post(environment.apiUrl + '/authenticate', body, {headers: header});
+  }
+
+  signUp(payload: SignUp): Observable<any> {
+    const formData = new FormData();
+    formData.append('avatar', payload.avatar);
+    return this.http.post<any>(
+        `${environment.apiUrl}/register?
+          name=${payload.name}&
+          email=${payload.email}&
+          password=${payload.password}&
+          password_confirmation=${payload.password_confirmation}&
+          phone=${payload.phone}&
+          `, formData
+    );
   }
 
   getUserEntidad(id : number) {
