@@ -1,0 +1,56 @@
+@import "src/styles/app";
+
+.container__header {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: $space-medium;
+}
+
+mat-radio-button {
+  &:not(:last-child) {
+    margin-right: $space-medium;
+  }
+}
+.parameter {
+  display: inline-block;
+
+  &:not(:last-child) {
+    margin-right: $space-medium;
+  }
+}
+.container__parameter {
+  display: inline-block;
+
+  &:not(:last-child) {
+    margin-right: $space-small;
+  }
+}
+
+.container__persp {
+  display: inline-block;
+}
+
+.container__btn {
+  display: block;
+}
+
+button {
+  &:not(:last-child) {
+    margin-right: $space-medium;
+  }
+}
+
+
+mat-checkbox {
+  &:not(:last-child) {
+    margin-right: $space-medium;
+  }
+}
+
+.btn-p {
+  @include btn($color-primary, 8rem);
+}
+
+.btn-m {
+  @include btn($color-primary, 6rem);
+}

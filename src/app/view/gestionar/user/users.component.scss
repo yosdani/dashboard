@@ -1,0 +1,114 @@
+.btn-info.btn-outline {
+    color: #D3B467;
+    //background-color: transparent;
+    transition: all .5s;
+    margin-right: 4px;
+    border-color: #1E4554 !important;
+}
+
+.pencil {
+  margin-left: .3rem;
+  margin-right: 1rem;
+}
+
+mat-icon {
+  cursor: pointer;
+}
+
+.card-header {
+  &__buscar {
+    display: inline-block;
+    width: 96%;
+  }
+
+  &__plus {
+    display: inline-block;
+    margin-left: 1rem;
+  }
+}
+.user__btn-p {
+    color: white;
+    width: 7.7rem;
+    height: 2.2rem;
+    border: hidden;
+    background-color: #1E4554;
+    border-radius: 4px;
+    box-shadow: 0 .3rem .6rem rgba(#0000, .2);
+    transition: all .2s;
+
+    &:hover {
+      transform: translateY(-.1rem);
+      color: black;
+      box-shadow: 0 .2rem .4rem rgba(#0000, .8);
+      background-color: #1E4554;
+      cursor: pointer;
+    }
+
+    &:focus, &:active {
+        background-color: #1E4554;
+        outline: none;
+    }
+}
+
+label {
+  display: block;
+}
+.btn-info.btn-outline:hover {
+    color: #fff;
+    //background-color: #23c6c8;
+    transition: all .5s;
+}
+.btn.btn-sm.btn-danger.btn-outline {
+    color: #ed5565;
+    background-color: transparent;
+    transition: all .5s;
+    border-color: #1E4554 !important;
+}
+.btn.btn-sm.btn-danger.btn-outline:hover {
+    color: #fff;
+    background-color: #ed5565;
+    transition: all .5s;
+}
+.help-block.error{
+    color: #ed5565;
+}
+.fa.fa-info-circle.circle {
+    color: #17a2b8;
+    font-size: 32px;
+}
+.modal-title span {
+    bottom: 4px;
+    position: relative;
+    margin-left: 3px;
+}
+.rol-superadmin {
+    background-color: #ed5565;
+    color: #FFFFFF;
+    padding: 0 5px 2px;
+    border-radius: 11%;
+}
+.rol-admin {
+    background-color: #f8ac59;
+    color: #FFFFFF;
+    padding: 0 5px 2px;
+    border-radius: 11%;
+}
+.rol-user {
+    background-color: #1ab394;
+    color: #FFFFFF;
+    padding: 0 5px 2px;
+    border-radius: 11%;
+}
+
+.loading img {
+    text-align: center;
+    margin-left: 33%;
+}
+
+.trash {
+  margin-left: .48rem;
+}
+
+.close:focus {
+    outline: none;
+}

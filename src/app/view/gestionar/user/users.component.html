@@ -1,0 +1,67 @@
+<div [@routerTransition] class="container">
+  <div class="row">
+    <div class="col col-xl-12">
+      <h5>Listado de Usuarios</h5>
+      <div class="card mb-3">
+        <div class="card-header">
+          <div class="card-header__buscar">
+            <input class="form-control" type="text" placeholder="Buscar Usuario" [(ngModel)]="term">
+          </div>
+          <div class="card-header__plus">
+            <mat-icon routerLink="/create-user" svgIcon="plus" aria-hidden="true" aria-label="Agregar Usuario"></mat-icon>
+          </div>
+        </div>
+        <div class="card-body table-responsive" *ngIf="showUsers; else no_user">
+          <table class="table">
+            <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Correo</th>
+              <th>Rol</th>
+              <th>Opciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let user of users | filter:term">
+              <td>{{user['name']}}</td>
+              <td>{{user['email']}}</td>
+              <td *ngIf="user.rol === 'superadmin'"><span class="rol-superadmin">{{ user['rol'] }}</span></td>
+              <td *ngIf="user.rol === 'admin'"><span class="rol-admin">{{ user['rol'] }}</span></td>
+              <td *ngIf="user.rol === 'user'"><span class="rol-user">{{ user['rol'] }}</span></td>
+              <td>
+                <a class="btn btn-sm btn-info btn-outline" [routerLink]="['/edit-user', user.id]"
+                *ngIf="validateEdit(); else no_edit"><i class="fa fa-pencil"></i></a>
+                <ng-template #no_edit>
+                  <i class="fa fa-pencil pencil"></i>
+                </ng-template>
+                <a class="btn btn-sm btn-info btn-outline" 
+                *ngIf="validateDelete(user.rol); else no_delete" 
+                (click)="delete(contentdelete,user)"><i class="fa fa-trash"></i></a>
+                <ng-template #no_delete>
+                  <i class="fa fa-trash trash"></i>
+                </ng-template>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <ng-template #no_user><app-spinner></app-spinner></ng-template>
+        <ng-template #contentdelete let-c="close" let-d="dismiss">
+          <div class="modal-header">
+            <h5 class="modal-title"><i class="fa fa-info-circle circle"></i><span>Eliminar Usuario</span></h5>
+            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <span>¿Estas seguro de eliminar este usuario?</span>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn-p" (click)="deleteUser(); c('Close click')">Eliminar</button>
+            <button type="button" class="btn-p" (click)="c('Close click')">Cancelar</button>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>
