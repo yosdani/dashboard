@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from "rxjs";
 import { hostUrl} from '../variables.globals';
 
@@ -22,6 +22,15 @@ export class UsersService {
     }
     create(user: string, id: number) {
         return this.http.post(hostUrl + '/user/create/' +  id, user, {headers:this.jwt()});
+    }
+    update(user: string, id: number) {
+        return this.http.put(hostUrl + '/user/update/' + id, user, {headers:this.jwt()});
+    }
+    delete(id: number) {
+        return this.http.delete(hostUrl + '/user/delete/' + id, {headers:this.jwt()});
+    }
+    getIndicadoresByUser(id_user: number) {
+        return this.http.get(hostUrl + '/indicadores/' + id_user, {headers: this.jwt()});
     }
 
     jwt() {
